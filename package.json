@@ -1,0 +1,19 @@
+{
+  "name": "helpmycar",
+  "version": "1.0.0",
+  "description": "HelpMyCar - PAP 2026/2027",
+  "scripts": {
+    "sincronizar": "cap sync android",
+    "abrir-android": "cap open android"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor-community/bluetooth-le": "^8.3.0",
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@capacitor/core": "^8.6.0"
+  }
+}

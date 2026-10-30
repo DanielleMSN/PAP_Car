@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HelpMyCar</string>
+    <string name="title_activity_main">HelpMyCar</string>
+    <string name="package_name">pt.helpmycar.app</string>
+    <string name="custom_url_scheme">pt.helpmycar.app</string>
+</resources>
