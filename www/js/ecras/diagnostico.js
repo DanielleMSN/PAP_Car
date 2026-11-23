@@ -189,6 +189,13 @@ async function procurar() {
     await new Promise((resolve) => setTimeout(resolve, DURACAO_PESQUISA));
     await pararPesquisa();
 
+    // Se o utilizador já tocou no leitor durante os 15 segundos, a zona
+    // "ligado" está visível. Nesse caso a mensagem de ligação mantém-se e não
+    // a trocamos por "Pesquisa terminada".
+    if (!zonaLigado.hidden) {
+      return;
+    }
+
     mostrarMensagem(
       encontrados.size > 0
         ? 'Pesquisa terminada. Toca no leitor para ligar.'
