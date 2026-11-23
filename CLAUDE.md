@@ -66,10 +66,10 @@ $adb="$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
 
 ## Estado atual (2026-11-23)
 **Feito e verificado:** projeto Capacitor, navegação, ecrã inicial e ecrã Diagnóstico instalados e vistos no Galaxy A13; interpretação das respostas OBD-II testada no computador; relatório formatado.
-**Testado no carro (Peugeot 208, relatado pela utilizadora):** a app ligou ao leitor e mostrou rotação e temperatura reais; a leitura de códigos não devolveu nenhum (o carro não tinha avarias). Como a app só usa o plugin BLE, o leitor é BLE (dedução). O registo técnico foi copiado pela utilizadora mas **ainda não o recebi**; a leitura de códigos com uma avaria real continua por ver.
+**Testado no carro (Peugeot 208, relatado pela utilizadora):** a app ligou ao leitor e mostrou rotação e temperatura reais; a leitura de códigos não devolveu nenhum (o carro não tinha avarias). Registo técnico recebido (17:15-17:17): o leitor aparece em "Encontrados" como `NORAUTOBT36044` (BLE confirmado, 0 emparelhados); serviço `fff0` com características `fff1`/`fff2`; responde `ELM327 v1.5`; `ATZ`, `ATE0`, `ATL0`, `ATS0`, `ATH0`, `ATSP0` aceites; `010C` ≈ 750 rpm em ralenti (`0BBA`), `0105` ≈ 79-82 °C; `03` respondeu `4300` (sem códigos). A leitura de códigos com uma avaria real continua por ver.
 **Por fazer, por ordem:**
 1. ~~Teste no carro~~ feito (ver acima). O módulo Kotlin fica dispensado.
-2. Receber o registo técnico e uma captura do ecrã Diagnóstico ligado (para o relatório).
+2. Uma captura do ecrã Diagnóstico ligado, com valores (para o relatório); o registo perde-se ao fechar a app.
 3. Explicações dos códigos de avaria (tabela `catalogo_codigos_erro`; não inventar explicações sem fonte).
 4. Guardar veículos, manutenções e despesas localmente.
 5. Executar o SQL no MySQL e criar a API PHP (contas/login).

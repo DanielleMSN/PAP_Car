@@ -229,8 +229,9 @@ navegador de computador (ver o ponto 7 sobre limitações).
   O Java 8 que já existia no computador não serve.
 - **Bluetooth:** implementado para BLE, com o plugin
   `@capacitor-community/bluetooth-le`. Testado no carro (Peugeot 208) com o
-  Norauto 2611975: a app ligou e mostrou rotação e temperatura. Como a app só
-  usa BLE, o leitor é BLE e não é preciso módulo nativo em Kotlin. A leitura de
+  Norauto 2611975: a app ligou e mostrou rotação e temperatura. O leitor
+  (`NORAUTOBT36044`) apareceu na pesquisa BLE, usa o serviço `fff0` e responde
+  como `ELM327 v1.5`, por isso é BLE e não é preciso módulo nativo em Kotlin. A leitura de
   códigos não devolveu nenhum, porque o carro não tinha avarias; ainda não foi
   vista com uma avaria real.
 - Ao abrir `www/index.html` diretamente no navegador do computador, os módulos
