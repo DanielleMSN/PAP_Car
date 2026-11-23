@@ -12,7 +12,7 @@ HTML, CSS e JavaScript, empacotados com o **Capacitor** numa app Android instal�
 | Parte | Estado |
 |---|---|
 | Estrutura, navegação e ecrã inicial | Feito e visto no telemóvel |
-| Ecrã Diagnóstico (Bluetooth BLE, leitura de RPM, temperatura e códigos) | Implementado, **por testar no carro** |
+| Ecrã Diagnóstico (Bluetooth BLE, leitura de RPM, temperatura e códigos) | Testado no carro: ligação, rotação e temperatura funcionam; códigos de avaria por ver com uma avaria real |
 | Veículos, manutenção, despesas, dúvidas e vídeos | Em construção |
 | Base de dados MySQL (`base_dados/criar_base_dados.sql`, 15 tabelas) | Escrita, ainda não executada |
 | API PHP, contas e login | Por fazer |

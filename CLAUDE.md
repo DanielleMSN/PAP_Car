@@ -7,7 +7,7 @@ Detalhes técnicos da app: `DOCUMENTACAO.md`. Resumo do projeto: `README.md`.
 - Projeto: **HelpMyCar**, app Android da Prova de Aptidão Profissional (PAP) de **Danielle Nascimento**, 12.º GPSI, Escola Secundária de Palmela. Orientador(a): Ana Cristina Ferreira.
 - A app ajuda a compreender, organizar e acompanhar a informação de um veículo. Função principal: ligar a um leitor **OBD-II por Bluetooth**, ler dados e códigos de avaria e explicá-los em linguagem simples.
 - A utilizadora fala **português (Portugal)**. Responde sempre em português. Não presumas pronomes: usa a forma neutra se for preciso.
-- Hardware de teste: leitor **Norauto ref. 2611975** (BLE ou clássico: por confirmar), carro **Peugeot 208 1.6 HDi 2015**, telemóvel **Samsung Galaxy A13** (Android 14).
+- Hardware de teste: leitor **Norauto ref. 2611975** (BLE, confirmado pelo teste de 2026-11), carro **Peugeot 208 1.6 HDi 2015**, telemóvel **Samsung Galaxy A13** (Android 14).
 
 ## Como trabalhar com a utilizadora (regras)
 1. **Explica antes de fazer e espera aprovação** para cada passo que altere o projeto, instale coisas, apague ficheiros ou escreva fora desta pasta. Ela prefere consentimento explícito.
@@ -64,12 +64,12 @@ $adb="$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
 - Pré-visualização rápida do ecrã inicial sem telemóvel: Edge headless (`msedge --headless=new --screenshot`) com uma moldura `<iframe>` de 360 px. Os módulos JS não correm em `file://`.
 - Testes das funções puras: copiar `www/js` para uma pasta temporária com `{"type":"module"}` no `package.json` e correr com `node`.
 
-## Estado atual (2026-10-30)
+## Estado atual (2026-11-23)
 **Feito e verificado:** projeto Capacitor, navegação, ecrã inicial e ecrã Diagnóstico instalados e vistos no Galaxy A13; interpretação das respostas OBD-II testada no computador; relatório formatado.
-**Implementado mas NÃO testado com o leitor real:** pesquisa BLE, ligação, descoberta do canal, ATZ/configuração, leitura de `010C`, `0105` e `03`.
+**Testado no carro (Peugeot 208, relatado pela utilizadora):** a app ligou ao leitor e mostrou rotação e temperatura reais; a leitura de códigos não devolveu nenhum (o carro não tinha avarias). Como a app só usa o plugin BLE, o leitor é BLE (dedução). O registo técnico foi copiado pela utilizadora mas **ainda não o recebi**; a leitura de códigos com uma avaria real continua por ver.
 **Por fazer, por ordem:**
-1. **Teste no carro** (a utilizadora faz): Diagnóstico -> Procurar leitor -> ligar -> leitura -> "Copiar registo" e enviar o registo técnico. Decide se o leitor é BLE ou clássico.
-2. Se clássico: módulo nativo Kotlin.
+1. ~~Teste no carro~~ feito (ver acima). O módulo Kotlin fica dispensado.
+2. Receber o registo técnico e uma captura do ecrã Diagnóstico ligado (para o relatório).
 3. Explicações dos códigos de avaria (tabela `catalogo_codigos_erro`; não inventar explicações sem fonte).
 4. Guardar veículos, manutenções e despesas localmente.
 5. Executar o SQL no MySQL e criar a API PHP (contas/login).

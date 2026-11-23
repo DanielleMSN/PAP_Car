@@ -228,9 +228,11 @@ navegador de computador (ver o ponto 7 sobre limitações).
   Java 21 (Temurin) em `C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot`.
   O Java 8 que já existia no computador não serve.
 - **Bluetooth:** implementado para BLE, com o plugin
-  `@capacitor-community/bluetooth-le`, mas ainda não testado com o leitor real.
-  Falta confirmar se o Norauto 2611975 é BLE. Se for Bluetooth clássico, não vai
-  aparecer na pesquisa e será preciso um módulo Android nativo em Kotlin.
+  `@capacitor-community/bluetooth-le`. Testado no carro (Peugeot 208) com o
+  Norauto 2611975: a app ligou e mostrou rotação e temperatura. Como a app só
+  usa BLE, o leitor é BLE e não é preciso módulo nativo em Kotlin. A leitura de
+  códigos não devolveu nenhum, porque o carro não tinha avarias; ainda não foi
+  vista com uma avaria real.
 - Ao abrir `www/index.html` diretamente no navegador do computador, os módulos
   JavaScript podem ser bloqueados. Usa um servidor local simples ou o telemóvel.
 
@@ -250,6 +252,7 @@ navegador de computador (ver o ponto 7 sobre limitações).
 
 **Por fazer, por ordem**
 1. Instalar o APK no telemóvel e confirmar o aspeto e o botão de voltar.
-2. Testar o ecrã Diagnóstico no carro: pesquisa, ligação, leituras e códigos.
+2. ~~Testar o ecrã Diagnóstico no carro~~ Feito: ligação, rotação e temperatura funcionaram; sem códigos de avaria no carro.
+3. Explicações dos códigos de avaria.
 4. Guardar veículos, manutenções e despesas no telemóvel.
 5. PHP + MySQL: contas, login e sincronização.
